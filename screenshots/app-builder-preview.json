@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Gold Dome",
+      "hasCanvas": false,
+      "bodyTextLen": 226,
+      "bodyTextHash": "82ab9b167990042394e818ceae5e3dd0bada3d1b3dc0b498af8d9a570c96c6ef",
+      "bodyTextPrefix": "HOMELAND SHIELD COMMAND GOLDEN DOME FOR AMERICA GOLD DOME Layere",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Gold Dome",
+      "hasCanvas": true,
+      "bodyTextLen": 226,
+      "bodyTextHash": "82ab9b167990042394e818ceae5e3dd0bada3d1b3dc0b498af8d9a570c96c6ef",
+      "bodyTextPrefix": "HOMELAND SHIELD COMMAND GOLDEN DOME FOR AMERICA GOLD DOME Layere",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

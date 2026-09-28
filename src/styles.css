@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+@theme {
+  --color-obsidian: #07080a;
+  --color-surface: #12141a;
+  --color-surface-2: #1a1c24;
+  --color-ivory: #f3ede0;
+  --color-muted: #8b8680;
+  --color-gold: #c9a227;
+  --color-gold-soft: #e8d5a3;
+  --color-crimson: #b33a3a;
+  --color-line: rgba(243, 237, 224, 0.12);
+  --color-bg: #07080a;
+  --color-fg: #f3ede0;
+
+  --font-display: "Cinzel", "Times New Roman", serif;
+  --font-sans: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  --text-2xs: 0.6875rem;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-micro: 80ms;
+  --motion-quick: 150ms;
+  --motion-fast: 250ms;
+  --motion-slow: 400ms;
+  --motion-emphasis: 500ms;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html,
+  body,
+  #app {
+    height: 100%;
+    background: var(--color-obsidian);
+    color: var(--color-ivory);
+  }
+
+  body {
+    font-family: var(--font-sans);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+.gold-dome-canvas {
+  touch-action: none;
+  outline: none;
+}
+
+.overlay-panel {
+  background: linear-gradient(
+    to bottom,
+    color-mix(in oklab, var(--color-obsidian) 58%, transparent) 0%,
+    color-mix(in oklab, var(--color-obsidian) 10%, transparent) 36%,
+    color-mix(in oklab, var(--color-obsidian) 10%, transparent) 64%,
+    color-mix(in oklab, var(--color-obsidian) 64%, transparent) 100%
+  );
+}
+
+.surface-hud {
+  border-radius: var(--radius-lg);
+  background: color-mix(in oklab, var(--color-obsidian) 78%, transparent);
+  box-shadow: 0 0 0 1px var(--color-line);
+}
+
+.surface-modal {
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+  box-shadow:
+    0 0 0 1px var(--color-line),
+    0 24px 48px rgba(0, 0, 0, 0.45);
+}
+
+.surface-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  color: var(--color-ivory);
+  background: color-mix(in oklab, var(--color-obsidian) 78%, transparent);
+  box-shadow: 0 0 0 1px var(--color-line);
+  transition:
+    opacity var(--motion-quick) var(--ease-out),
+    transform var(--motion-quick) var(--ease-out);
+}
+
+.surface-icon:hover {
+  opacity: 0.86;
+}
+
+.surface-icon:active {
+  transform: scale(0.98);
+}
+
+.rise {
+  animation: rise var(--motion-emphasis) var(--ease-smooth-out) both;
+}
+
+.delay-1 {
+  animation-delay: 40ms;
+}
+.delay-2 {
+  animation-delay: 90ms;
+}
+.delay-3 {
+  animation-delay: 140ms;
+}
+.delay-4 {
+  animation-delay: 220ms;
+}
+.delay-5 {
+  animation-delay: 280ms;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise {
+    animation: none;
+  }
+}
